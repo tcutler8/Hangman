@@ -12,8 +12,10 @@ public class HangmanGame {
         Scanner scnr = new Scanner(System.in);
         
         while (count < 7 && underscore.contains("_")){
+        //underscores to replace unguessed letters
+            
             System.out.println("Guess any letter or word");
-            System.out.println(underscore);   //underscores to replace unguessed letters
+            System.out.println(underscore);   
             String currentGuess = scnr.next();
             hangman(currentGuess);
         }
@@ -22,10 +24,9 @@ public class HangmanGame {
     public static void startNewGame() {
         while (startNewGame) {
             System.out.println("Begin Game!");
-            int currentWord = random.next();  //Will use randomWord from wordList class
-            
-            
-    }  
+            guessLetters = scnr.nextLine();
+              
+    } 
     
     public static void getNewGuesses(String guess) {    
     }
@@ -124,7 +125,6 @@ public class HangmanGame {
         }
         if (count == 7) {
             System.out.println("Wrong. Try again");
-            System.out.println("Wrong. Try again");
             System.out.println("    _______________");
             System.out.println("    |            _|_");
             System.out.println("    |          /      \");
@@ -142,12 +142,13 @@ public class HangmanGame {
         }            
     }
                                
-    public static void updateGuesses(){
+    public static void updateGuesses() {
         String currentGuess = scnr.next();
     }
                                
-    public static boolean checkWins(){     //Checks player's input for correct word/letters
-        if (guessedLetters == currentWord) {
+    public static boolean checkWins() {     
+    //Checks player's input for correct word/letters
+        if (numLettersInWord == true) {
             System.out.println("You Won!");
         } 
         else {
@@ -155,11 +156,19 @@ public class HangmanGame {
         }
       
     }
-    public static void exit() {            //If player wins or loses, exit question will appear. 
-        if ( && ){
-            System.out.println("Do you want to play again?");
-            if (player              //If player inputs "y", new game starts.
-                                    //If player intpus "n", game will reset and exit
+    public static void exit() {  
+    //If player wins or loses, exit question will appear. 
+        System.out.println("Do you want to play again? Enter Y for yes or N for no");
+        int answer = scnr.next();
+        answer = answer.toLowerCase();
+    //If player inputs "y", new game starts.
+    //If player intpus "n", game will reset and exit  
+        if (answer.equals("y")) {
+            hangman.resetTheGame();
+        }
+        else {
+            System.exit(0);
+        }
      
   }
  }
