@@ -38,6 +38,7 @@ public class HangmanGame {
     }
         
     public static void updateVisuals() {
+    //Graphic results of wrong guesses
         if (count == 1) {
             System.out.println("Wrong. Try again");
             System.out.println("    _______________");
@@ -152,7 +153,7 @@ public class HangmanGame {
     //Unfinished Code
     //Add up guess count and update past guesses while updating visuals
         String currentGuess = scnr.next();
-        if (
+        if (guessedLetters == true
     }
                                
     public static boolean checkWins() {     
