@@ -9,6 +9,7 @@ public class HangmanGame {
     private static int numLettersInWord;
     
     public static void main(String[] args) {
+    
         Scanner scnr = new Scanner(System.in);
         
         while (count < 7 && underscore.contains("_")){
@@ -22,16 +23,22 @@ public class HangmanGame {
     }
     
     public static void startNewGame() {
+    //Unfisiniehd code
+    //Game begins and the player starts to guess letters
         while (startNewGame) {
             System.out.println("Begin Game!");
             guessLetters = scnr.nextLine();
               
     } 
     
-    public static void getNewGuesses(String guess) {    
+    public static void getNewGuesses(String guess) {
+    //Unfinished code
+    //Gather input from user; pass results to updateGuesses
+        
     }
         
     public static void updateVisuals() {
+    //Graphic results of wrong guesses
         if (count == 1) {
             System.out.println("Wrong. Try again");
             System.out.println("    _______________");
@@ -142,11 +149,15 @@ public class HangmanGame {
         }            
     }
                                
-    public static void updateGuesses() {
+    public static boolean updateGuesses() {
+    //Unfinished Code
+    //Add up guess count and update past guesses while updating visuals
         String currentGuess = scnr.next();
+        if (guessedLetters == true
     }
                                
     public static boolean checkWins() {     
+    //Unfinished
     //Checks player's input for correct word/letters
         if (numLettersInWord == true) {
             System.out.println("You Won!");
