@@ -11,8 +11,11 @@ public class HangmanGame {
     public static void main(String[] args) {
     
         Scanner scnr = new Scanner(System.in);
+        getNewGuesses();
         
-        while (count < 7 && underscore.contains("_")){
+        do (getNewGuesses && updateGuesse ) {
+            while (guessedLetters < 7 && underscore.contains("_"))
+            {
         //underscores to replace unguessed letters
             
             System.out.println("Guess any letter or word");
@@ -25,21 +28,31 @@ public class HangmanGame {
     public static void startNewGame() {
     //Unfisiniehd code
     //Game begins and the player starts to guess letters
-        while (startNewGame) {
+        while (guessedLetter = 0) {
             System.out.println("Begin Game!");
             guessLetters = scnr.nextLine();
+            for (int i=0; i<word.length(); ++i) {
+                if (guessedLeter == word.charAt(i)) {
+                    updateVisals();
+                    updateGuesses();
+                }
+            }
+        }
+            
               
     } 
     
     public static void getNewGuesses(String guess) {
     //Unfinished code
     //Gather input from user; pass results to updateGuesses
+        getNewGuesses = scnr.next();
+        while (guessedLetters.char[Array]
         
     }
         
     public static void updateVisuals() {
     //Graphic results of wrong guesses
-        if (count == 1) {
+        if (currentGuess == 1) {
             System.out.println("Wrong. Try again");
             System.out.println("    _______________");
             System.out.println("    |");
@@ -54,7 +67,7 @@ public class HangmanGame {
             System.out.println("    |");
             System.out.println("____|______");
         }
-        if (count == 2) {
+        if (currentGuess == 2) {
             System.out.println("Wrong. Try again"):
             System.out.println("    _______________");
             System.out.println("    |            _|_");
@@ -69,7 +82,7 @@ public class HangmanGame {
             System.out.println("    |");
             System.out.println("____|______");
         }
-        if (count == 3) {
+        if (currentGuess == 3) {
             System.out.println("Wrong. Try again");
             System.out.println("    _______________");
             System.out.println("    |            _|_");
@@ -84,7 +97,7 @@ public class HangmanGame {
             System.out.println("    |");
             System.out.println("____|______");
         }
-        if (count == 4) {
+        if (currentGuess == 4) {
             System.out.println("Wrong. Try again");
             System.out.println("    _______________");
             System.out.println("    |            _|_");
@@ -99,7 +112,7 @@ public class HangmanGame {
             System.out.println("    |");
             System.out.println("____|______")
         }
-        if (count == 5) {
+        if (currentGuess == 5) {
             System.out.println("Wrong. Try again");
             System.out.println("    _______________");
             System.out.println("    |            _|_");
@@ -114,7 +127,7 @@ public class HangmanGame {
             System.out.println("    |");
             System.out.println("____|______")
         }
-        if (count == 6) {
+        if (currentGuess == 6) {
             System.out.println("Wrong. Try again");
             System.out.println("Wrong. Try again");
             System.out.println("    _______________");
@@ -130,7 +143,7 @@ public class HangmanGame {
             System.out.println("    |           / ");
             System.out.println("____|______    /")
         }
-        if (count == 7) {
+        if (currentGuess == 7) {
             System.out.println("Wrong. Try again");
             System.out.println("    _______________");
             System.out.println("    |            _|_");
@@ -152,8 +165,14 @@ public class HangmanGame {
     public static boolean updateGuesses() {
     //Unfinished Code
     //Add up guess count and update past guesses while updating visuals
+        getNewGuesses();
+        updateVisuals();
+        word.isLetterInWord();
+        
         String currentGuess = scnr.next();
-        if (guessedLetters == true
+        if (guessedLetters == true) {
+            updateVisuals.equals(currentGuess);
+        }
     }
                                
     public static boolean checkWins() {     
