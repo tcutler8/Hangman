@@ -9,6 +9,7 @@ public class HangmanGame {
     private static char guessedLetters;
     private static int numLettersInWord;
     private static boolean hasGuessedWord = false;
+    private static boolean shouldContinue;
     private static int guessCount = 0;
     private static int failedGuessCount = 0;
     public static Scanner scnr = new Scanner(System.in);
@@ -206,6 +207,7 @@ public class HangmanGame {
         return didWin;
     }
     public static void exit() {  
+        shouldContinue = false;
     //If player wins or loses, exit question will appear. 
         System.out.println("Do you want to play again? Enter Y for yes or N for no");
         String answer = scnr.next();
@@ -213,7 +215,7 @@ public class HangmanGame {
     //If player inputs "y", new game starts.
     //If player intpus "n", game will reset and exit  
         if (!answer.equals("y")) {
-            hasGuessedWord = false;
+            shouldContinue = true;
         }
   }
 }
