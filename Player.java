@@ -1,13 +1,18 @@
+//Mark Timpson, Meredith Hanson, Tayson Cutler
+//Team Assignment - Project
+//CSIS-1400
+//04-24-2022
+
 import java.util.ArrayList;
 
 public class Player {
-    private String playerName;
-    private int numWins;
-    private int numLosses;
-    private int currStreak;
-    private int highStreak;
-    private ArrayList<String> allWords;
-    private ArrayList<Boolean> roundResult;
+    private static String playerName;
+    private static int numWins;
+    private static int numLosses;
+    private static int currStreak;
+    private static int highStreak;
+    private static ArrayList<String> allWords;
+    private static ArrayList<Boolean> roundResult;
 
     // overload constructor
     public Player() {
@@ -26,7 +31,7 @@ public class Player {
     }
 
     // called in main() at the end of every round
-    public void roundEnd(boolean roundWon, String word) {
+    public static void roundEnd(boolean roundWon, String word) {
         if (roundWon)
             ++numWins;
         else
@@ -41,7 +46,7 @@ public class Player {
         setStreak(roundWon);
     }
 
-    private void setStreak(boolean playerWin) {
+    private static void setStreak(boolean playerWin) {
         // if the player won, increase streak
         // else, set streak back to 0
         if (playerWin)
@@ -56,14 +61,14 @@ public class Player {
     }
 
     // accessor (getter) methods
-    public String getPlayerName() {return playerName;}
-    public int    getWins()       {return numWins;}
-    public int    getLosses()     {return numLosses;}
-    public int    getCurrStreak() {return currStreak;}
-    public int    getHighStreak() {return highStreak;}
+    public static String getPlayerName() {return playerName;}
+    public static int    getWins()       {return numWins;}
+    public static int    getLosses()     {return numLosses;}
+    public static int    getCurrStreak() {return currStreak;}
+    public static int    getHighStreak() {return highStreak;}
 
     // print all information about a player
-    public void printInfo() {
+    public static void printInfo() {
         System.out.println("Info for "  + getPlayerName());
         System.out.println("    Wins: "           + getWins());
         System.out.println("    Losses: "         + getLosses());

@@ -1,10 +1,16 @@
+//Mark Timpson, Meredith Hanson, Tayson Cutler
+//Team Assignment - Project
+//CSIS-1400
+//04-24-2022
+
 import java.util.Random;
 
+//Word class stores possible words for the game, as well as offers functionality on that list
 public class Word {
 
-    //List of possible words
     public static Random rand = new Random();
 
+    //List of possible words
     private static String[] wordList = {"able", "about", "account", "across", "addition", "adjustment", "advertisement","after","again","against",
     "agreement","almost","among","amount","amusement","angle","angry","animal","answer","apparatus","apple","approval","argument","attack",
     "attempt","attention","attraction","authority","automatic","awake","balance","basin","basket","beautiful","because","before","behaviour",
@@ -37,29 +43,23 @@ public class Word {
     "trousers","twist","umbrella","under","value","vessel","violent","voice", "waiting", "weather", "weight", "whistle", "window", "winter", 
     "woman", "wound", "writing", "wrong", "yellow", "yesterday"};
 
+
     public static String currentWord;
 
+    //Constructor gets random word
     public Word(){
         currentWord = getRandomWord();
-        System.out.println(currentWord);
-        System.out.println(isLetterInWord('e'));
-        System.out.println(isRightWord("system"));
     }
 
+    //Returns a new random word
     public static String getRandomWord(){
         String word = wordList[rand.nextInt(wordList.length)];
         return word;
     }
 
+    //Returns true if passed letter is in currentWord
     public static boolean isLetterInWord(char letter){
         boolean answer = currentWord.contains("" + letter + "");
         return answer;
     }
-
-    public static boolean isRightWord(String word){
-        boolean answer = currentWord.equals(word);
-        return answer;
-    }
-    
-
 }
