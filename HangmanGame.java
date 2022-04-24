@@ -11,17 +11,16 @@ import java.util.Arrays;
 public class HangmanGame {
     
     private static String currentWord;
-    public static char[] currentWordCharArray;
-    private static char[] guessLine;
     private static String currGuess;
-    private static char[] currGuessCharArray;
-    private static char currGuessChar;
-    private static boolean hasGuessedWord;
     private static String shouldContinue;
     private static int failedGuessCount = 0;
-    public static Scanner scnr = new Scanner(System.in);
-    public static Word word = new Word();   // instantiate Word class object
-    public static ArrayList<String> guessedLetters = new ArrayList<>();
+    private static boolean hasGuessedWord;
+    private static char currGuessChar;
+    private static char[] guessLine;
+    private static char[] currGuessCharArray;
+    public  static char[] currentWordCharArray;
+    public  static Scanner scnr = new Scanner(System.in);
+    public  static ArrayList<String> guessedLetters = new ArrayList<>();
     
     public static void main(String[] args) {
         createPlayer();
@@ -41,8 +40,8 @@ public class HangmanGame {
     //Game menu where player decides to play again or quit
     public static void menu(){
         Player.printInfo();
-        System.out.println("Would you like to start a game? y to start, anything else to quit.");
-        shouldContinue = scnr.next();
+        System.out.println("Would you like to start a game? 'y' to start, anything else to quit.");
+        shouldContinue = scnr.next().toLowerCase();
         if(shouldContinue.equals("y")){
             resetGame();
             game();
@@ -54,13 +53,13 @@ public class HangmanGame {
 
     //Fetches a new random word and resets all relevant variables accordingly
     public static void resetGame(){
-        currentWord = Word.getRandomWord();
+        currentWord          = Word.getRandomWord();
         currentWordCharArray = new char[currentWord.length()];
+        guessLine            = new char[currentWord.length()];
         currentWordCharArray = currentWord.toCharArray();
+        failedGuessCount     = 0;
+        hasGuessedWord       = false;
         guessedLetters.clear();
-        failedGuessCount = 0;
-        hasGuessedWord = false;
-        guessLine = new char[currentWord.length()];
         for(int i = 0; i < currentWord.length(); i++){
             guessLine[i] = '_';
         }
@@ -110,7 +109,7 @@ public class HangmanGame {
         if (hasGuessedWord){
             System.out.println("Congrats! You guessed the word.");
         } else {
-            System.out.println("You lost! The word was: " + currentWord);
+            System.out.println("You lost! The word was: \"" + currentWord + "\"");
         }
         menu();
     }
@@ -131,6 +130,7 @@ public class HangmanGame {
         System.out.println(guessLine);
     }
 
+    //Check if the user won
     public static boolean didWin(char[] word){
         boolean won = Arrays.equals(word, guessLine);
         if(won){System.out.println("You won.");}
