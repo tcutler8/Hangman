@@ -139,133 +139,137 @@ public class HangmanGame {
         
     //Graphic results of guesses
     public static void updateVisuals(boolean guessedCorrectly) {
-        if (failedGuessCount == 0) {
-            System.out.println("    _______________");
-            System.out.println("    |");
-            System.out.println("    |");
-            System.out.println("    |");
-            System.out.println("    |");
-            System.out.println("    |");
-            System.out.println("    |");
-            System.out.println("    |");
-            System.out.println("    |");
-            System.out.println("    |");
-            System.out.println("    |");
-            System.out.println("____|______");
-            System.out.println();
-            printGuessLine();
-        }
-        if (failedGuessCount == 1) {
-            System.out.println("    _______________");
-            System.out.println("    |            _|_");
-            System.out.println("    |          /      \\");
-            System.out.println("    |         |        |");
-            System.out.println("    |          \\______/");
-            System.out.println("    |");
-            System.out.println("    |");
-            System.out.println("    |");
-            System.out.println("    |");
-            System.out.println("    |");
-            System.out.println("    |");
-            System.out.println("____|______");
-            System.out.println();
-            printGuessLine();
-        }
-        if (failedGuessCount == 2) {
-            System.out.println("    _______________");
-            System.out.println("    |            _|_");
-            System.out.println("    |          /      \\");
-            System.out.println("    |         |        |");
-            System.out.println("    |          \\______/");
-            System.out.println("    |             |");
-            System.out.println("    |           __|__");
-            System.out.println("    |             | ");
-            System.out.println("    |             |");
-            System.out.println("    |             |");
-            System.out.println("    |");
-            System.out.println("____|______");
-            System.out.println();
-            printGuessLine();
-        }
-        if (failedGuessCount == 3) {
-            System.out.println("    _______________");
-            System.out.println("    |            _|_");
-            System.out.println("    |          /      \\"); 
-            System.out.println("    |         |        |");
-            System.out.println("    |          \\______/");
-            System.out.println("    |             |");
-            System.out.println("    |           __|__");
-            System.out.println("    |          /  |");
-            System.out.println("    |         |   |");
-            System.out.println("    |             |");
-            System.out.println("    |");
-            System.out.println("____|______");
-            System.out.println();
-            printGuessLine();
-        }
-        if (failedGuessCount == 4) {
-            System.out.println("    _______________");
-            System.out.println("    |            _|_");
-            System.out.println("    |          /      \\");
-            System.out.println("    |         |        |");
-            System.out.println("    |          \\______/");
-            System.out.println("    |             |");
-            System.out.println("    |           __|__");
-            System.out.println("    |         /   |    \\");
-            System.out.println("    |        |    |     |");
-            System.out.println("    |             |");
-            System.out.println("    |");
-            System.out.println("____|______");
-            System.out.println();
-            printGuessLine();
-        }
-        if (failedGuessCount == 5) {
-            System.out.println("    _______________");
-            System.out.println("    |            _|_");
-            System.out.println("    |          /      \\");
-            System.out.println("    |         |        |");
-            System.out.println("    |          \\______/");
-            System.out.println("    |             |");
-            System.out.println("    |           __|__");
-            System.out.println("    |         /   |    \\");
-            System.out.println("    |         |   |     |");
-            System.out.println("    |             |");
-            System.out.println("    |           / ");
-            System.out.println("____|______    /");
-            System.out.println();
-            printGuessLine();
-        }
-        if (failedGuessCount == 6) {
-            System.out.println("    _______________");
-            System.out.println("    |            _|_");
-            System.out.println("    |          /      \\");
-            System.out.println("    |         |        |");
-            System.out.println("    |          \\______/");
-            System.out.println("    |             |");
-            System.out.println("    |           __|__");
-            System.out.println("    |         /   |    \\");
-            System.out.println("    |         |   |     |");
-            System.out.println("    |             |");
-            System.out.println("    |           /   \\");
-            System.out.println("____|______    /     \\");
-            System.out.println();
-            printGuessLine();
-        }
-        if (failedGuessCount == 7) {
-            System.out.println("    _______________");
-            System.out.println("    |            _|_");
-            System.out.println("    |          / x  x \\");
-            System.out.println("    |         |        |");
-            System.out.println("    |          \\______/");
-            System.out.println("    |             |");
-            System.out.println("    |           __|__");
-            System.out.println("    |         /   |    \\");
-            System.out.println("    |         |   |     |");
-            System.out.println("    |             |");
-            System.out.println("    |           /   \\");
-            System.out.println("____|______    /     \\");
-            System.out.println();
-            printGuessLine();
+        switch (failedGuessCount) {
+            case 0:
+                System.out.println("    _______________");
+                System.out.println("    |");
+                System.out.println("    |");
+                System.out.println("    |");
+                System.out.println("    |");
+                System.out.println("    |");
+                System.out.println("    |");
+                System.out.println("    |");
+                System.out.println("    |");
+                System.out.println("    |");
+                System.out.println("    |");
+                System.out.println("____|______");
+                System.out.println();
+                printGuessLine();
+                break;
+            case 1:
+                System.out.println("    _______________");
+                System.out.println("    |            _|_");
+                System.out.println("    |          /      \\");
+                System.out.println("    |         |        |");
+                System.out.println("    |          \\______/");
+                System.out.println("    |");
+                System.out.println("    |");
+                System.out.println("    |");
+                System.out.println("    |");
+                System.out.println("    |");
+                System.out.println("    |");
+                System.out.println("____|______");
+                System.out.println();
+                printGuessLine();
+                break;
+            case 2:
+                System.out.println("    _______________");
+                System.out.println("    |            _|_");
+                System.out.println("    |          /      \\");
+                System.out.println("    |         |        |");
+                System.out.println("    |          \\______/");
+                System.out.println("    |             |");
+                System.out.println("    |           __|__");
+                System.out.println("    |             | ");
+                System.out.println("    |             |");
+                System.out.println("    |             |");
+                System.out.println("    |");
+                System.out.println("____|______");
+                System.out.println();
+                printGuessLine();
+                break;
+            case 3:
+                System.out.println("    _______________");
+                System.out.println("    |            _|_");
+                System.out.println("    |          /      \\"); 
+                System.out.println("    |         |        |");
+                System.out.println("    |          \\______/");
+                System.out.println("    |             |");
+                System.out.println("    |           __|__");
+                System.out.println("    |          /  |");
+                System.out.println("    |         |   |");
+                System.out.println("    |             |");
+                System.out.println("    |");
+                System.out.println("____|______");
+                System.out.println();
+                printGuessLine();
+                break;
+            case 4:
+                System.out.println("    _______________");
+                System.out.println("    |            _|_");
+                System.out.println("    |          /      \\");
+                System.out.println("    |         |        |");
+                System.out.println("    |          \\______/");
+                System.out.println("    |             |");
+                System.out.println("    |           __|__");
+                System.out.println("    |         /   |    \\");
+                System.out.println("    |        |    |     |");
+                System.out.println("    |             |");
+                System.out.println("    |");
+                System.out.println("____|______");
+                System.out.println();
+                printGuessLine();
+                break;
+            case 5:
+                System.out.println("    _______________");
+                System.out.println("    |            _|_");
+                System.out.println("    |          /      \\");
+                System.out.println("    |         |        |");
+                System.out.println("    |          \\______/");
+                System.out.println("    |             |");
+                System.out.println("    |           __|__");
+                System.out.println("    |         /   |    \\");
+                System.out.println("    |         |   |     |");
+                System.out.println("    |             |");
+                System.out.println("    |           / ");
+                System.out.println("____|______    /");
+                System.out.println();
+                printGuessLine();
+                break;
+            case 6:
+                System.out.println("    _______________");
+                System.out.println("    |            _|_");
+                System.out.println("    |          /      \\");
+                System.out.println("    |         |        |");
+                System.out.println("    |          \\______/");
+                System.out.println("    |             |");
+                System.out.println("    |           __|__");
+                System.out.println("    |         /   |    \\");
+                System.out.println("    |         |   |     |");
+                System.out.println("    |             |");
+                System.out.println("    |           /   \\");
+                System.out.println("____|______    /     \\");
+                System.out.println();
+                printGuessLine();
+                break;
+            case 7:
+                System.out.println("    _______________");
+                System.out.println("    |            _|_");
+                System.out.println("    |          / x  x \\");
+                System.out.println("    |         |        |");
+                System.out.println("    |          \\______/");
+                System.out.println("    |             |");
+                System.out.println("    |           __|__");
+                System.out.println("    |         /   |    \\");
+                System.out.println("    |         |   |     |");
+                System.out.println("    |             |");
+                System.out.println("    |           /   \\");
+                System.out.println("____|______    /     \\");
+                System.out.println();
+                printGuessLine();
+                break;
+            default:
+                break;
         }
         //Wrong / correct message under hangman for clarity
         if (guessedCorrectly) {
